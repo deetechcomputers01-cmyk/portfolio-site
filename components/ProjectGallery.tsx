@@ -116,14 +116,14 @@ export function ProjectGallery({ devices }: { devices: ProjectGalleryDevice[] })
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-100 flex items-center justify-center bg-black/90 p-4 sm:p-8"
+            className="fixed inset-0 z-100 flex items-center justify-center bg-black/90 px-14 py-4 sm:px-20 sm:py-8"
             onClick={() => setLightboxIndex(null)}
           >
             <button
               type="button"
               onClick={() => setLightboxIndex(null)}
               aria-label="Close preview"
-              className="absolute right-4 top-4 inline-flex size-11 items-center justify-center border border-white/20 text-white transition-colors hover:bg-white/10"
+              className="absolute right-3 top-3 z-10 inline-flex size-11 items-center justify-center rounded-full bg-black/70 text-white backdrop-blur-sm transition-colors hover:bg-black/90 sm:right-6 sm:top-6"
             >
               <X className="size-5" />
             </button>
@@ -137,7 +137,7 @@ export function ProjectGallery({ devices }: { devices: ProjectGalleryDevice[] })
                     setLightboxIndex((i) => (i === null ? i : (i - 1 + items.length) % items.length));
                   }}
                   aria-label="Previous screenshot"
-                  className="absolute left-2 top-1/2 inline-flex size-11 -translate-y-1/2 items-center justify-center border border-white/20 text-white transition-colors hover:bg-white/10 sm:left-6"
+                  className="absolute left-2 top-1/2 z-10 inline-flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-black/70 text-white backdrop-blur-sm transition-colors hover:bg-black/90 sm:left-6"
                 >
                   <ChevronLeft className="size-5" />
                 </button>
@@ -148,7 +148,7 @@ export function ProjectGallery({ devices }: { devices: ProjectGalleryDevice[] })
                     setLightboxIndex((i) => (i === null ? i : (i + 1) % items.length));
                   }}
                   aria-label="Next screenshot"
-                  className="absolute right-2 top-1/2 inline-flex size-11 -translate-y-1/2 items-center justify-center border border-white/20 text-white transition-colors hover:bg-white/10 sm:right-6"
+                  className="absolute right-2 top-1/2 z-10 inline-flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-black/70 text-white backdrop-blur-sm transition-colors hover:bg-black/90 sm:right-6"
                 >
                   <ChevronRight className="size-5" />
                 </button>
@@ -164,14 +164,14 @@ export function ProjectGallery({ devices }: { devices: ProjectGalleryDevice[] })
               className="flex max-h-full max-w-4xl flex-col items-center gap-4"
               onClick={(event) => event.stopPropagation()}
             >
-              <div className="relative max-h-[75vh] w-full overflow-hidden rounded-lg">
+              <div className="relative max-h-[70vh] w-full overflow-hidden rounded-lg">
                 <Image
                   src={items[lightboxIndex].src}
                   alt={items[lightboxIndex].alt}
                   width={1600}
                   height={1000}
                   sizes="90vw"
-                  className="h-auto max-h-[75vh] w-full object-contain"
+                  className="h-auto max-h-[70vh] w-full object-contain"
                 />
               </div>
               <p className="text-sm text-white/70">
